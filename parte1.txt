@@ -1,0 +1,44 @@
+apps:
+https://www.youtube.com/watch?v=iX_on3VxZzk&list=WL&index=2
+https://www.youtube.com/watch?v=j2Hg56guD4A
+
+flutter:
+	aplicacion de gastos:
+	https://www.youtube.com/watch?v=C5G-CvqNi1s&list=PLntQ_VE6-lYCz2DXgVpd7yNm3opgM-mH-
+	app simple:
+	https://www.youtube.com/watch?v=u0Zxo8Hkoq4
+	app financiera:
+	https://www.youtube.com/watch?v=wvkTuiqje2U
+	app con base de datos:
+	https://www.youtube.com/watch?v=osUq6B92-BY
+
+unity:
+https://www.youtube.com/watch?v=X7ijTK2zS9Q
+https://www.youtube.com/watch?v=5UNDUbB3zoI
+
+rutas:
+https://www.youtube.com/watch?v=pQpi22VaqFI
+
+proyecto:
+	documentacion flutter:
+	https://docs.flutter.dev
+	que es dart:
+	https://www.youtube.com/watch?v=Kc8KPE0O6g0
+	que base de datos es mejor (ingles):
+	https://www.freelancinggig.com/blog/2017/07/22/mariadb-vs-mysql-vs-postgresql-depth-comparison/#:~:text=All%20three%20MariaDB%2C%20MySQL%2C%20and,application%2C%20and%20they%20are%20reliable.
+	variable nula:
+	https://dart.dev/null-safety
+	como hacer un login:
+	https://www.youtube.com/watch?v=Qj3KM8IiWfg
+	login bonito:
+	https://www.youtube.com/watch?v=KFKPKRUQKt4
+	animaciones en flutter:
+		intro:
+		https://www.youtube.com/watch?v=M7XC9FUl4HQ
+	lottie:
+	https://www.youtube.com/watch?v=1HlNkO1S6Kg
+	como conectar a la base de datos:
+	https://www.youtube.com/watch?v=THd1kOw24HY
+	https://www.youtube.com/watch?v=-Dw9S-DbhsQ
+	error de gradle:
+	https://www.youtube.com/watch?v=X6YKBpzp1aw

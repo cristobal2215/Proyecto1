@@ -1,0 +1,5 @@
+import 'package:flutter/material.dart';
+class MyColors {
+  static Color primaryColor = Color(0xFFff1744);
+  static Color primaryColor2 = Color.fromRGBO(231, 13, 50, 0.09);
+}

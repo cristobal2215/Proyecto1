@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+import 'package:proyecto/src/models/response_api.dart';
+import 'package:proyecto/src/models/user.dart';
+import 'package:proyecto/src/provider/users_provider.dart';
+
+import '../../models/user.dart';
+class RegisterController {
+  BuildContext? context;
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController nameController = new TextEditingController();
+  TextEditingController lastnameController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
+  TextEditingController phonoController = new TextEditingController();
+  TextEditingController confirmPassController = new TextEditingController();
+
+  UsersProvider usersProvider = new UsersProvider();
+
+  Future? init(BuildContext context) {
+    this.context = context;
+    usersProvider.init(context);
+  }
+  void register() async {
+    String $email = emailController.text.trim();
+    String $name = nameController.text.trim();
+    String $lastname = lastnameController.text.trim();
+    String $phono = phonoController.text.trim();
+    String $password = passwordController.text.trim();
+    String $confirmpassword = confirmPassController.text.trim();
+
+
+    User user = new User(
+      email: $email,
+      name: $name,
+      lastname: $lastname,
+      phone: $phono,
+      password: $password
+    );
+
+    ResponseApi? responseApi = await usersProvider.create(user);
+    
+    print('Respuesta: ${responseApi?.toJson()}');
+    print($email);
+    print($name);
+    print($lastname);
+    print($phono);
+    print($password);
+    print($confirmpassword);
+  }
+}

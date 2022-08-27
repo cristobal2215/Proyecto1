@@ -1,0 +1,161 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:lottie/lottie.dart';
+import 'package:proyecto/src/pages/login/login_controller.dart';
+import 'package:proyecto/src/utils/my_colors.dart';
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  Login_Controller _con = new Login_Controller();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      _con.init(context);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _lottieanimation(),
+              //_imageBanner(),
+              _textFieldEmail(),
+              _textFieldPassword(),
+              _buttonLogin(),
+              _textDontHaveAccount(),
+            ],
+          ),
+        ),
+      )
+    );
+  }
+
+  Widget _imageBanner() {
+    return Container(
+      margin: EdgeInsets.only(
+          top: 100,
+          bottom: MediaQuery.of(context).size.height * 0.20
+      ),
+      child: Image.asset(
+        'assets/img/veterinary.png',
+        width: 200, height: 200,
+      ),
+    );
+  }
+
+  Widget _textFieldEmail() {
+    return Container(
+      margin: EdgeInsets.symmetric(
+          horizontal: 50,
+          vertical: 10
+      ),
+      decoration: BoxDecoration(
+        color: MyColors.primaryColor2,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: TextField(
+        controller: _con.emailController,
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          hintText: 'Correo Electronico',
+          contentPadding: EdgeInsets.all(15),
+          prefixIcon: Icon(Icons.email,
+          color: MyColors.primaryColor
+          ),
+          border: InputBorder.none,
+        ),
+      ),
+    );
+  }
+  Widget _textFieldPassword() {
+    return Container(
+      margin: EdgeInsets.symmetric(
+          horizontal: 50,
+          vertical: 10
+      ),
+      decoration: BoxDecoration(
+        color: MyColors.primaryColor2,
+        borderRadius: BorderRadius.circular(30)
+      ),
+      child: TextField(
+        controller: _con.passwrodController,
+        obscureText: true,
+        decoration: InputDecoration(
+          hintText: 'Contraseña',
+          contentPadding: EdgeInsets.all(15),
+          prefixIcon: Icon(Icons.lock,
+          color: MyColors.primaryColor
+          ),
+          border: InputBorder.none,
+        ),
+      ),
+    );
+  }
+  Widget _buttonLogin() {
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+      child: ElevatedButton(
+        onPressed: _con.login,
+        child: Text('Ingresar'),
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20)
+          ),
+          padding: EdgeInsets.symmetric(vertical: 15),
+
+        ),
+      ),
+    );
+  }
+  Widget _textDontHaveAccount() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text('No tienes cuenta?',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: MyColors.primaryColor,
+          ),
+        ),
+        SizedBox(width: 7),
+        GestureDetector(
+          onTap: _con.goToRegisterPage,
+          child: Text('Registrate',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: MyColors.primaryColor,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+  Widget _lottieanimation() {
+    return Container(
+      margin: EdgeInsets.only(
+          top: 100,
+          bottom: MediaQuery.of(context).size.height * 0.20
+      ),
+      child: Lottie.asset(
+        'assets/json/veterinary.json',
+          width: 350,
+          height: 200,
+          fit: BoxFit.fill
+      ),
+    );
+  }
+}

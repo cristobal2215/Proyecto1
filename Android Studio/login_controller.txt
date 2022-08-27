@@ -1,0 +1,18 @@
+import 'package:flutter/material.dart';
+class Login_Controller {
+  BuildContext? context;
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwrodController = new TextEditingController();
+  Future? init(BuildContext context){
+    this.context = context;
+  }
+  void goToRegisterPage(){
+    Navigator.pushNamed(context!, 'register');
+  }
+  void login() {
+    String $email = emailController.text.trim();
+    String $password = passwrodController.text.trim();
+    print($email);
+    print($password);
+  }
+}
