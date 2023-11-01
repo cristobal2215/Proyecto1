@@ -23,18 +23,18 @@ app.set('PORT', PORT);
 //rutas
 users(app);
 
-server.listen(3000, '192.168.101.6' || 'localhost', function(){
+server.listen(3000, '' || 'localhost', function(){
     console.log('Aplication Nodejs '+ PORT + ' Iniciado.')
 });
 
-/* IP Casa Talca
-server.listen(3000, '192.168.1.93' || 'localhost', function(){
+/* otra IP 
+server.listen(3000, '' || 'localhost', function(){
     console.log('Aplication Nodejs '+ PORT + ' Iniciado.')
 
 });*/ 
 
-/* IP U
-server.listen(3000, '192.168.226.155' || 'localhost', function(){
+/* otra IP
+server.listen(3000, '' || 'localhost', function(){
     console.log('Aplication Nodejs '+ PORT + ' Iniciado.')
 });*/
 
